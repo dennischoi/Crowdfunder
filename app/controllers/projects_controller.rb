@@ -8,6 +8,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project=current_user.projects.build(project_params)
+    if @project.save
+      redirect_to @project
+    else
+      render :new
+    end
   end
 
   def new
