@@ -19,7 +19,7 @@ user2 = User.create({
 })
 
 project1 = Project.create({
-  user_id: User.find_by(name: "Natalie").id,
+  owner_id: User.find_by(name: "Natalie").id,
   name: "Fred's not here",
   description: "So good",
   end_date: Date.today,
@@ -35,6 +35,6 @@ reward1 = Reward.create({
 })
 
 pledge = Pledge.create({
-  user_id: User.find_by( name: "Fred").id,
+  backer_id: User.find_by( name: "Fred").id,
   reward_id: Reward.find_by( name: "Level one").id
 })
