@@ -1,2 +1,57 @@
-<h1>Create Project</h1>
-<%
+<h1>New Project</h1>
+
+<h2>Project Information</h2>
+
+<p><%= form_for @project do |f| %></p>
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</div>
+<div class="field">
+  <%= f.label :funding_goal %><br>
+  <%= f.number_field :funding_goal %>
+</div>
+<div class="field">
+  <%= f.label :end_date %><br>
+  <%= f.date_field :end_date %>
+</div>
+<div class="field">
+  <%= f.label :media_url %><br>
+  <%= f.text_field :media_url %>
+</div>
+
+  <div>
+    <h2>Rewards</h2>
+
+    <%= f.fields_for :rewards, Reward.new do |reward_fields| %>
+      <div class=”field”>
+        <%= reward_fields.label :name %><br>
+        <%= reward_fields.text_field :name %>
+      </div>
+      <div class=”field”>
+      	<%= reward_fields.label :description %><br>
+      	<%= reward_fields.text_area :description %>
+      </div>
+    	<div class=”field”>
+      	<%= reward_fields.label :amount %><br>
+      	<%= reward_fields.number_field :amount %>
+      </div>
+    <% end %>
+
+  </div>
+
+<div class="action">
+  <%= f.submit %>
+</div>
+
+<% end %>
