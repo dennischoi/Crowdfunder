@@ -7,6 +7,7 @@
   <%= @project.description %>
 </p>
 
-<!-- <p>
-  <%#= render @project.rewards %>
-</p> -->
+<p>
+  <%= render @project.rewards %>
+</p>
+<%= link_to 'Edit', edit_project_path(@project) %>

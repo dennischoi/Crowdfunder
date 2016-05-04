@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects= Project.all
+    @projects = Project.all
   end
 
   def show
@@ -8,7 +8,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project=current_user.projects.build(project_params)
+    @project = current_user.owned_projects.build(project_params)
+    # @project = User.first.owned_projects.build(project_params)
     if @project.save
       redirect_to @project
     else
@@ -21,13 +22,22 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(project_params)
+      redirect_to @project
+    else
+      render :edit
+    end
   end
 
   private
   def project_params
-    params.require(:projcet).permit(:name, :description, :end_date, :funding_goal, :media_url)
+    params.require(:project).permit(:name, :description, :end_date, :funding_goal, :media_url,
+      rewards_attributes: [:name, :description, :amount]
+    )
   end
 end
