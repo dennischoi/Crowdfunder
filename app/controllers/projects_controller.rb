@@ -8,8 +8,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    # @project = current_user.owned_projects.build(project_params)
-    @project = User.first.owned_projects.build(project_params)
+    @project = current_user.owned_projects.build(project_params)
+    # @project = User.first.owned_projects.build(project_params)
     if @project.save
       redirect_to @project
     else
@@ -22,9 +22,16 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
   end
 
   def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(project_params)
+      redirect_to @project
+    else
+      render :edit
+    end
   end
 
   private
