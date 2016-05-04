@@ -9,13 +9,15 @@
 user1 = User.create({
   name: "Natalie",
   email:"natalie@natalie.com",
-  password_digest: "1234"
+  password: "1234",
+  password_confirmation: "1234"
 })
 
 user2 = User.create({
   name: "Fred",
   email:"fred@nfred.com",
-  password_digest: "1234"
+  password: "1234",
+  password_confirmation: "1234"
 })
 
 project1 = Project.create({
