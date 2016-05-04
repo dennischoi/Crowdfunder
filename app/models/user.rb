@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-  has_many :pledges
+  has_many :pledges, foreign_key: 'backer_id'
   has_many :rewards, through: :pledges
   has_many :projects, through: :rewards
-  has_many :owned_projects, class_name: "Project"
+  has_many :owned_projects, class_name: "Project", foreign_key: 'owner_id'
 
   authenticates_with_sorcery!
 
