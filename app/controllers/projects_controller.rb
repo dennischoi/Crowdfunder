@@ -8,8 +8,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.owned_projects.build(project_params)
-    # @project = User.first.owned_projects.build(project_params)
+    # @project = current_user.owned_projects.build(project_params)
+    @project = User.first.owned_projects.build(project_params)
     if @project.save
       redirect_to @project
     else
@@ -29,6 +29,8 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name, :description, :end_date, :funding_goal, :media_url)
+    params.require(:project).permit(:name, :description, :end_date, :funding_goal, :media_url,
+      rewards_attributes: [:name, :description, :amount]
+    )
   end
 end
