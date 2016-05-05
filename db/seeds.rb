@@ -20,11 +20,11 @@ user2 = User.create({
   password_confirmation: "1234"
 })
 
-project1 = Project.create({
+project1 = Project.create!({
   owner_id: User.find_by(name: "Natalie").id,
   name: "Fred's not here",
   description: "So good",
-  end_date: Date.today,
+  end_date: Date.today+2.weeks,
   funding_goal: 1000,
   media_url: "www.hello.com"
   })
@@ -33,10 +33,10 @@ reward1 = Reward.create({
   name: "Level one",
   description: "basic level",
   amount: 10,
-  project_id: Project.find_by( name: "Fred's not here").id
+  project_id: Project.find_by(name: "Fred's not here").id
 })
 
-pledge = Pledge.create({
-  backer_id: User.find_by( name: "Fred").id,
-  reward_id: Reward.find_by( name: "Level one").id
-})
+pledge = Pledge.new({
+  backer_id: User.find_by(name: "Fred").id,
+  reward_id: Reward.find_by(name: "Level one").id
+}, skip_validations: true).save(validate: false)

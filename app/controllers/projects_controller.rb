@@ -8,12 +8,16 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = current_user.owned_projects.build(project_params)
-    # @project = User.first.owned_projects.build(project_params)
-    if @project.save
-      redirect_to @project
+    if current_user
+      @project = current_user.owned_projects.build(project_params)
+      binding.pry
+      if @project.save
+        redirect_to @project
+      else
+        render :new
+      end
     else
-      render :new
+      render :new, alert: "You need to login"
     end
   end
 
@@ -37,7 +41,7 @@ class ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:name, :description, :end_date, :funding_goal, :media_url,
-      rewards_attributes: [:name, :description, :amount]
+      rewards_attributes: [:name, :description, :amount, :project_id]
     )
   end
 end

@@ -1,10 +1,14 @@
 class PledgesController < ApplicationController
   def create
-    @pledge = current_user.pledges.build(pledge_params)
-    if @pledge.save
-      redirect_to user_path(current_user)
+    if current_user
+      @pledge = current_user.pledges.build(pledge_params)
+      if @pledge.save
+        redirect_to user_path(current_user)
+      else
+        render "error"
+      end
     else
-      render "error"
+      render :new, alert: "you need to login"
     end
   end
 

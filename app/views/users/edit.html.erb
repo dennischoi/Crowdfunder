@@ -1,6 +1,11 @@
 <h1>Profile Edit</h1>
 
 <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message|%>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
 
   <div class="fields">
     <%= f.label :name %><br/>
