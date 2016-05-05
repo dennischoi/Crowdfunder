@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  skip_before_action :require_login, only: %i(index show)
+
+
   def index
     @projects = Project.all
   end
@@ -10,10 +13,12 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.owned_projects.build(project_params)
     # @project = User.first.owned_projects.build(project_params)
-    if @project.save
-      redirect_to @project
-    else
-      render :new
+    if current_user
+      if @project.save
+        redirect_to @project
+      else
+        render :new
+      end
     end
   end
 
@@ -27,10 +32,12 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update_attributes(project_params)
-      redirect_to @project
-    else
-      render :edit
+    if current_user
+      if @project.update_attributes(project_params)
+        redirect_to @project
+      else
+        render :edit
+      end
     end
   end
 

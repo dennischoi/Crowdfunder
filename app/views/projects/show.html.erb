@@ -1,3 +1,6 @@
+
+
+
 <h1><%= @project.name %></h1>
 <img src="<%= @project.media_url %>" alt="" />
 <p><%= @project.owner.name %></p>
@@ -10,4 +13,7 @@
 <p>
   <%= render @project.rewards %>
 </p>
+
+<% if current_user && current_user.id == @project.owner_id %>
 <%= link_to 'Edit', edit_project_path(@project) %>
+<% end %>
