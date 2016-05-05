@@ -6,7 +6,7 @@
 <h3>Your Projects</h3>
   <% if current_user.owned_projects.any? %>
     <ul>
-    <% current_user.projects.map do |proj|%>
+    <% current_user.owned_projects.map do |proj|%>
         <li><%= proj.name %></li>
         <li><%= proj.description %></li>
         <li><%= proj.end_date %></li>
