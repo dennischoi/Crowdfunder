@@ -2,6 +2,10 @@
 
 
 <h1><%= @project.name %></h1>
+
+<div class="funds-raised">
+  <%= @project.total_moneh %> of <%= @project.funding_goal %>
+</div>
 <img src="<%= @project.media_url %>" alt="" />
 <p><%= @project.owner.name %></p>
 <h2><%= @project.funding_goal%></h2>
