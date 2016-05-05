@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, :only => %i(create new)
   def create
     if @user = login(params[:email], params[:password])
       redirect_back_or_to(:projects, notice: 'Login successful')

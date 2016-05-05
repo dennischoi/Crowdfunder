@@ -19,4 +19,8 @@ class Project < ActiveRecord::Base
   def within_sixty_days?
     errors.add(:end_date, "you can't set end date to today or earlier") unless (end_date <=> Date.today+60.days) == -1
   end
+
+  def date_left
+    project_days_length = (self.end_date - Date.today).to_i
+  end
 end
