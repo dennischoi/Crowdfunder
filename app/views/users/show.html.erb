@@ -20,7 +20,7 @@
 <% if current_user.rewards.any? %>
   <ul>
     <% current_user.rewards.map do |rew| %>
-      <li><%= rew.project.name %></li>
+      <li><%= link_to rew.project.name, project_path(rew.project) %></li>
       <li><%= rew.name %></li>
       <li><%= rew.amount %></li>
       <li><%= rew.description %></li>
