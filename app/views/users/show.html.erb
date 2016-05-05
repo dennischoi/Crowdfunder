@@ -5,27 +5,27 @@
 
 <h3>Your Projects</h3>
   <% if current_user.projects.any? %>
-    <li>
+    <ul>
     <% current_user.projects.map do |proj|%>
         <li><%= proj.name %></li>
         <li><%= proj.description %></li>
         <li><%= proj.end_date %></li>
       <% end %>
-    </li>
+    </ul>
   <% else %>
     <li>YOU GOT NO PROJECTS</li>
   <% end %>
 
 <h3>REWARDS</h3>
 <% if current_user.rewards.any? %>
-  <li>
+  <ul>
     <% current_user.rewards.map do |rew| %>
       <li><%= rew.project.name %></li>
       <li><%= rew.name %></li>
       <li><%= rew.amount %></li>
       <li><%= rew.description %></li>
     <% end %>
-  </li>
+  </ul>
 <% else %>
   <li>NO REWARDS</li>
 <% end %>

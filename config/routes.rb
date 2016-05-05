@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index, :destroy]
   resources :projects, except: [:destroy]
-  resources :pledges, only: [:create]
-  resources :rewards, only: [:create]
+  resources :rewards, only: [:create] do
+    resources :pledges, only: [:create]
+  end
 
 
   # get 'rewards/create'
