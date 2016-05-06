@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   skip_before_action :require_login, only: %i(index show)
+  before_action :owner_login, only: %i(edit update)
 
 
   def index
@@ -48,5 +49,12 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :description, :end_date, :funding_goal, :media_url,
       rewards_attributes: [:name, :description, :amount, :project_id]
     )
+  end
+
+  def owner_login
+    @project = Project.find(params[:id])
+    unless @project.owner == current_user
+      redirect_to @project, alert: 'Get the fuck outta here'
+    end
   end
 end
