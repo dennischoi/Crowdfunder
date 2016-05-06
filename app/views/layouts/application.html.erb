@@ -7,29 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <nav class='nav-bar'>
-      <div class="home-button">
-        <%= link_to image_tag('crowdfunder-logo.png'), root_url %>
-      </div>
-      <ul class='gym-login'>
-        <% if current_user %>
-        <%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %>
-        <% else %>
-        <%= link_to "Login", :login %> | <%= link_to "Sign Up", new_user_path %>
-        <% end %>
-      </ul>
-    </nav>
-  </header>
+<div class= "gym-navigation">
+  <ul class = "gym-nav" id = "home-nav">
+    <li class><a href= "">Home</a></li>
+    <li class>
+      <% if current_user %>
+      <%= link_to 'Create Project', new_project_path %>
+      <% else %>
+      <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
 
+      <% end %>
+    </li>
+    <li class><a href = "/projects">View Project</a></li>
+  </ul>
+</div>
+<div class= "gym-navigation">
+  <!-- <ul class = "gym-nav" id= "login"> -->
+    <% if current_user %>
+      <li><%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %></li>
+    <% else %>
+      <li><%= link_to "Login", :login %> <%= link_to "Sign Up", new_user_path %></li>
+    <% end %>
+  </ul>
+</div>
 <%= yield %>
 
-  <footer>
-    <div class="footer-container">
-      <p class="copyright">
-        &#169; The 6 Power Rangers
-      </p>
-    </div>
-  </footer>
 </body>
 </html>
