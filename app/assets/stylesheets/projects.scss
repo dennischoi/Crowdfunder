@@ -1,3 +1,118 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #212121;
+}
+
+body {
+  margin: 0;
+}
+
+.gym-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  // overflow: hidden;
+  background-color: #2196F3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.gym-nav li{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#login {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  // padding-top: 10px;
+}
+
+#home-nav {
+  margin-top: -45px;
+}
+
+.gym-nav a {
+
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 10rem;
+}
+
+
+.gym-nav a:hover {
+  background-color: #607D8B;
+}
+
+.gym-top-slider img{
+  background-size: 100%;
+  background-repeat: no-repeat;
+  // background-image: url("crowdfunding.jpg");
+  width: 100%;
+  margin: 10px;
+}
+
+.gym-project-container{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;;
+  border: 2px solid #1976D2;
+  width: 45%;
+
+}
+
+
+.gym-footer{
+  background-color: #2196F3;
+  color: #fff;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+
+.project-1,
+.project-2,
+.project-3 {
+  border: 2px dotted #bbdefb;
+  width: 33%;
+  height: 300px;
+  flex-wrap: wrap;
+  background-color: #212121;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+// @media screen and (min-width: 28.125rem){
+//   .gym-nav{
+//     width: 100%;
+//   }
+//   .gym-nav li{
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: left;
+//   overflow: hidden;
+//   }
+//
+//
+//   }

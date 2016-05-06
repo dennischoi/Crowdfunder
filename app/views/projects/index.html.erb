@@ -1,10 +1,55 @@
-<h1>Gimme Yo Money</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GimmeYoMonay!</title>
+    <meta name="viewport" content= "width-device-with, initial-scale=1.0">
+  </head>
 
-<% if current_user %>
-  <%= link_to 'Create Project', new_project_path %>
-<% else %>
-  <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
+  <body>
+    <!-- <h1>Gimme Yo Money</h1> -->
+  <div class= "gym-navigation">
+    <ul class = "gym-nav" id = "home-nav">
+      <li class><a href= "">Home</a></li>
+      <li class>
+        <% if current_user %>
+        <%= link_to 'Create Project', new_project_path %>
+        <% else %>
+        <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
 
-<% end %>
+        <% end %>
+      </li>
+      <li class><a href = "/projects">View Project</a></li>
+    </ul>
+  </div>
 
-<%= render @projects %>
+  <div class= "gym-top-slider">
+    <img src = "gym.png">
+  </div>
+
+
+    <!-- <% if current_user %>
+    <%= link_to 'Create Project', new_project_path %>
+    <% else %>
+    <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
+
+    <% end %> -->
+
+    <!-- <%= render @projects %> -->
+
+    <div class= "gym-projects">
+      <div class= "project-1">
+        <p>project 1</p>
+      </div>
+      <div class= "project-2">
+        <p>project 2</p>
+      </div>
+      <div class= "project-3">
+        <p>project 3</p>
+      </div>
+    </div>
+
+    <footer class="gym-footer">
+        Copyright 2016
+    </footer>
+  </body>
