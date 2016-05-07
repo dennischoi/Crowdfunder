@@ -35,6 +35,11 @@ body {
   width: 100%;
 }
 
+#home-nav {
+  margin: 0;
+  overflow: hidden;
+}
+
 .home-button {
   text-align: left;
 }
@@ -74,4 +79,8 @@ footer {
 .gym-title {
   margin: 0;
   padding-top: 4rem;
+}
+
+.gym-logging {
+  float: right;
 }
