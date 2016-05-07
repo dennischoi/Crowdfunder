@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gym</title>
+  <title>CrowdFunder</title>
+  <meta charset="UTF-8">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content= "width-device-with, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class= "gym-navigation">
-  <ul class = "gym-nav" id = "home-nav">
-    <li class><a href= "">Home</a></li>
-    <li class>
+  <div class= "gym-navigation">
+    <ul class = "gym-nav" id = "home-nav">
+      <li><%= link_to 'Home', projects_path %></li>
+        <% if current_user %>
+        <li><%= link_to 'Create Project', new_project_path %></li>
+        <% else %>
+        <li><%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %></li>
+        <% end %>
+      </ul>
+    <ul class = "gym-nav" id= "login">
       <% if current_user %>
-      <%= link_to 'Create Project', new_project_path %>
+        <li><%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %></li>
       <% else %>
-      <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
-
+        <li><%= link_to "Login", :login %> <%= link_to "Sign Up", new_user_path %></li>
       <% end %>
-    </li>
-    <li class><a href = "/projects">View Project</a></li>
-  </ul>
-</div>
-<div class= "gym-navigation">
-  <!-- <ul class = "gym-nav" id= "login"> -->
-    <% if current_user %>
-      <li><%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %></li>
-    <% else %>
-      <li><%= link_to "Login", :login %> <%= link_to "Sign Up", new_user_path %></li>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+
 <%= yield %>
 
 </body>
