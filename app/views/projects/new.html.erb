@@ -1,8 +1,13 @@
 <h1>New Project</h1>
 
-<h2>Project Information</h2>
+<div class="test">
 
-<p><%= form_for @project do |f| %></p>
+  <h2>Project Information</h2>
+</div>
+
+<p>
+</p>
+<%= form_for @project do |f| %>
   <% if @project.errors.any? %>
     <% @project.errors.full_messages.each do |message|%>
       <li><%= message %></li>
@@ -33,21 +38,14 @@
   <div>
     <h2>Rewards</h2>
 
-    <%= f.fields_for :rewards, Reward.new do |reward_fields| %>
-      <div class=”field”>
-        <%= reward_fields.label :name %><br>
-        <%= reward_fields.text_field :name %>
-      </div>
-      <div class=”field”>
-      	<%= reward_fields.label :description %><br>
-      	<%= reward_fields.text_area :description %>
-      </div>
-    	<div class=”field”>
-      	<%= reward_fields.label :amount %><br>
-      	<%= reward_fields.number_field :amount %>
-      </div>
-    <% end %>
+    <div class="rewardForm">
 
+        <%= f.fields_for :rewards, Reward.new do |reward_fields| %>
+          <%= render 'reward_fields', f: reward_fields %>
+        <% end %>
+        <%= link_to_add_association 'add reward', f, :rewards %>
+
+    </div>
   </div>
 
 <div class="action">
