@@ -4,6 +4,9 @@
 <h1><%= @project.name %></h1>
 
 <div class="funds-raised">
+  <div id="total_funds" data="<%=@project.total_moneh %>">
+
+  </div>
   <%= @project.total_moneh %> of <%= @project.funding_goal %>
 </div>
 <img src="<%= @project.media_url %>" alt="" />
@@ -13,8 +16,7 @@
 <div>
   <h2><%= @project.date_left %> Days Left!</h2>
 </div>
-<p>
-  <%= @project.description %>
+<p>  <%= @project.description %>
 </p>
 
 <p>
