@@ -35,6 +35,11 @@ body {
   width: 100%;
 }
 
+#search-func {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 #home-nav {
   margin: 0;
   overflow: hidden;
@@ -44,13 +49,7 @@ body {
   text-align: left;
 }
 
-.home-button img {
-  width: 80px;
-  height: 60px;
-  line-height: 60px;
 
-  float: left;
-}
 
 footer {
   overflow: hidden;

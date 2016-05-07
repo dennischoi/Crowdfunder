@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :owner, class_name: "User"
 
-	accepts_nested_attributes_for :rewards
+  accepts_nested_attributes_for :rewards
 
   validates :owner_id, :name, :end_date, :funding_goal, presence: true
 
@@ -27,8 +27,8 @@ class Project < ActiveRecord::Base
   def total_moneh
     funds_raised = 0
     self.rewards.map do |reward|
-      plebs = reward.pledges.length
-      reward_amount = plebs * reward.amount
+      total_pledge = reward.pledges.length
+      reward_amount = total_pledge * reward.amount
       funds_raised += reward_amount
     end
       return funds_raised
