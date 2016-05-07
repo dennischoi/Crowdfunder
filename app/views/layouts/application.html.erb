@@ -9,15 +9,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class= "gym-navigation">
     <ul class = "gym-nav" id = "home-nav">
-      <li><%= link_to 'Home', projects_path %></li>
+      <li><%= link_to 'Home', root_url %></li>
         <% if current_user %>
         <li><%= link_to 'Create Project', new_project_path %></li>
         <% else %>
         <li><%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %></li>
         <% end %>
-      </ul>
+    </ul>
     <ul class = "gym-nav" id= "login">
       <% if current_user %>
         <li><%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %></li>
@@ -26,8 +27,12 @@
       <% end %>
     </ul>
   </div>
-
 <%= yield %>
 
 </body>
+
+<footer class="gym-footer">
+    Copyright 2016
+</footer>
+
 </html>

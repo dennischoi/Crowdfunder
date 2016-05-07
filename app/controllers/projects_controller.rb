@@ -27,6 +27,12 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def edit
