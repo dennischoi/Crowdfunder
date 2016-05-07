@@ -21,11 +21,12 @@ body {
   margin: 0;
   padding: 0;
   // overflow: hidden;
-  background-color: #2196F3;
+  background-color: rgba(255,255,255,0.5);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
+  width: 1152px;
 }
 
 .gym-nav li{
@@ -38,16 +39,19 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  // padding-top: 10px;
+  margin-top: -45px;
 }
 
 #home-nav {
-  margin-top: -45px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .gym-nav a {
 
-  color: #ffffff;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -56,34 +60,55 @@ body {
 
 
 .gym-nav a:hover {
-  background-color: #607D8B;
+  background-color: rgba(241, 240, 240, 0.5);
 }
 
-.gym-top-slider img{
-  background-size: 100%;
-  background-repeat: no-repeat;
-  // background-image: url("crowdfunding.jpg");
-  width: 100%;
-  margin: 10px;
+.gym-top-slider{
+  width: 1150px;
+  height: 500px;
+  border: 2px solid black;
+}
+// .gym-top-slider img{
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   // background-image: url("crowdfunding.jpg");
+//   width: 100%;
+//   margin: 10px;
+// }
+
+.take-look {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  height: 500px;
 }
 
-.gym-project-container{
+#gym-button {
+  align-self: center;
+  text-align: center;
+  width: 150px;
+  padding: 20px;
+  background-color: #e7b63f;
+
+}
+.gym-projects{
   display: inline-flex;
   flex-direction: row;
-  justify-content: space-between;;
-  border: 2px solid #1976D2;
-  width: 45%;
+  justify-content: center;
+
+  // border: 2px solid #1976D2;
+  width: 1152px;
 
 }
 
 
 .gym-footer{
-  background-color: #2196F3;
-  color: #fff;
+  background-color: rgba(241, 240, 240, 0.5);
+  color: #e7b63f;
   height: 2.5rem;
   line-height: 2.5rem;
   text-align: center;
-  width: 100%;
+  width: 1152px;
 }
 
 
@@ -91,16 +116,14 @@ body {
 .project-2,
 .project-3 {
   border: 2px dotted #bbdefb;
-  width: 33%;
+  width: 23%;
   height: 300px;
-  flex-wrap: wrap;
-  background-color: #212121;
-  color: #fff;
+  background-color: rgba(241, 240, 240, 0.5);
+  color: black;
   text-align: center;
   padding: 10px;
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: space-around;
+  margin: 20px;
+
 }
 // @media screen and (min-width: 28.125rem){
 //   .gym-nav ul{
