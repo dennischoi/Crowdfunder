@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gym</title>
+  <title>CrowdFunder</title>
   <meta charset="UTF-8">
-  <title>GimmeYoMonay!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <meta name="viewport" content= "width-device-with, initial-scale=1.0">
@@ -12,15 +11,13 @@
 <body>
   <div class= "gym-navigation">
     <ul class = "gym-nav" id = "home-nav">
-      <li class = "gym-nav"><a href= "">Home</a></li>
-      <li class = "gym-nav"><% if current_user %>
-          <%= link_to 'Create Project', new_project_path %></li>
+      <li><%= link_to 'Home', projects_path %></li>
+        <% if current_user %>
+        <li><%= link_to 'Create Project', new_project_path %></li>
         <% else %>
-      <li class = "gym-nav"><%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %></li>
+        <li><%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %></li>
         <% end %>
       </ul>
-
-  <div class= "gym-navigation">
     <ul class = "gym-nav" id= "login">
       <% if current_user %>
         <li><%= link_to "Logout", :logout, method: :delete %> | <%= link_to "Profile", user_path(current_user) %> | <%= link_to "Back", root_path %></li>

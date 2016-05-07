@@ -8,23 +8,11 @@
 
   <body>
     <!-- <h1>Gimme Yo Money</h1> -->
-  <div class= "gym-navigation">
-    <ul class = "gym-nav" id = "home-nav">
-      <li class><a href= "">Home</a></li>
-      <li class>
-        <% if current_user %>
-        <%= link_to 'Create Project', new_project_path %>
-        <% else %>
-        <%= link_to 'Create Project', login_path, alert: "Must Log in to Create a Project" %>
+  <div class = "gym-top-slider">
 
-        <% end %>
-      </li>
-      <li class><a href = "/projects">View Project</a></li>
-    </ul>
-  </div>
-
-  <div class= "gym-top-slider">
-    <img src = "gym.png">
+    <div class = "take-look">
+      <button id= gym-button>TAKE A LOOK</button>
+    </div>
   </div>
 
 
