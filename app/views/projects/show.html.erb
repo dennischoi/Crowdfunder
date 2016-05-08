@@ -5,9 +5,11 @@
 
 <div class="funds-raised">
   <div id="total_funds" data="<%=@project.total_moneh %>">
-
-  </div>
-  <%= @project.total_moneh %> of <%= @project.funding_goal %>
+</div>
+<div id="project-funding-status">
+  <%= render partial: 'project_total_money' %>
+</div>
+<div id="project-backed">
 </div>
 <img src="<%= @project.media_url %>" alt="" />
 <p><%= @project.owner.name %></p>

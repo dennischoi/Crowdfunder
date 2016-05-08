@@ -107,9 +107,14 @@ body {
 }
 
 
-.project-1,
-.project-2,
-.project-3 {
+// .project-1,
+// .project-2,
+// .project-3
+
+.gym-project-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   border: 2px dotted #bbdefb;
   width: 23%;
   height: 300px;
