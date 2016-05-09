@@ -5,9 +5,9 @@
   </div>
   <div id=”rew_description”>
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Description of this Reward" %>
   </div>
   <div id=”rew_amount”>
     <%= f.label :amount %><br>
-    $<%= f.number_field :amount %>
+    $<%= f.number_field :amount, placeholder: "Cost for Reward" %>
   </div>
