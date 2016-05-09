@@ -116,13 +116,20 @@ body {
 // .project-2,
 // .project-3
 
+.index-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.more-contain {
+  text-align: center;
+}
+
 .gym-project-container{
   display: inline-flex;
   flex-direction:row;
   justify-content: center;
 }
-
-
 
 
 
@@ -139,6 +146,139 @@ body {
 //   margin: 20px;
 //
 // }
+
+.gym-new-background img {
+  width: 100%;
+}
+
+#new-project-title {
+  text-align: center;
+}
+
+#project_name {
+  width: 50%;
+  height: 3.125rem;
+  font-size: 1.5625rem;
+  text-align: center;
+}
+
+#project_description {
+  width: 50%;
+  height: 10rem;
+  font-size: 1.25rem;
+}
+
+#project_funding_goal {
+  width: 50%;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#project_end_date {
+  width: 50%;
+  height: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#project_media_url {
+  width: 50%;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+
+
+.project-info {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  border: 2px solid green;
+  text-align: center;
+  background-image: url(http://hdimagesnew.com/wp-content/uploads/2015/11/White-Texture-HD-Backgrounds-6.jpg);
+}
+
+
+
+.dot {
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+
+.title-form {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 1.5rem;
+}
+
+.description-form {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.funding-form {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.end-date-form {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.media-form {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+
+// .reward-name {
+//   text-align: center;
+//   font-size: 1.25rem;
+//   padding-bottom: 1.5rem;
+// }
+
+
+
+#project_rewards_attributes_0_name {
+  width: 50%;
+  height: 3.125rem;
+  font-size: 1.5625rem;
+  text-align: center;
+}
+
+#project_rewards_attributes_0_description {
+  width: 50%;
+  height: 10rem;
+  font-size: 1.25rem;
+}
+
+#project_rewards_attributes_0_amount {
+  width: 50%;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.add_fields {
+  border: 2px solid black;
+}
+
+#rew_amount {
+  text-align: center;
+  font-size: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+
 // @media screen and (min-width: 28.125rem){
 //   .gym-nav ul{
 //     width: 100%;
