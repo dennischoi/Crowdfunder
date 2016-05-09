@@ -14,7 +14,7 @@
  *= require_self
  */
 
-*,
+/**,
 *:after,
 *:before, {
   box-sizing: border-box;
@@ -81,4 +81,4 @@ footer {
 
 .gym-logging {
   float: right;
-}
+}*/

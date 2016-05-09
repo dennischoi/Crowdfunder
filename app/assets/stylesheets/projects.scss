@@ -48,11 +48,16 @@ body {
   justify-content: flex-start;
 }
 
+#search-func {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .gym-nav a {
 
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px;
   text-decoration: none;
   width: 10rem;
 }
@@ -112,19 +117,28 @@ body {
 // .project-3
 
 .gym-project-container{
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
+  flex-direction:row;
   justify-content: center;
-  border: 2px dotted #bbdefb;
-  width: 23%;
-  height: 300px;
-  background-color: rgba(241, 240, 240, 0.5);
-  color: black;
-  text-align: center;
-  padding: 10px;
-  margin: 20px;
-
 }
+
+
+
+
+
+
+
+//
+//   border: 2px dotted #bbdefb;
+//   width: 33%;
+//   height: 200px;
+//   background-color: rgba(241, 240, 240, 0.5);
+//   color: black;
+//   text-align: center;
+//   padding: 10px;
+//   margin: 20px;
+//
+// }
 // @media screen and (min-width: 28.125rem){
 //   .gym-nav ul{
 //     width: 100%;
